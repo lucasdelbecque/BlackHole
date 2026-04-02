@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: BlackHole
-# Configurations: 
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -20,6 +20,11 @@
 
 ninja_required_version = 1.5
 
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -50,25 +55,28 @@ build MetalShader: phony CMakeFiles/MetalShader blackhole.metallib
 
 build cmake_object_order_depends_target_BlackHole: phony || MetalShader
 
-build CMakeFiles/BlackHole.dir/src/main.mm.o: OBJCXX_COMPILER__BlackHole_unscanned_ /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/main.mm || cmake_object_order_depends_target_BlackHole
+build CMakeFiles/BlackHole.dir/src/main.mm.o: OBJCXX_COMPILER__BlackHole_unscanned_Release /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/main.mm || cmake_object_order_depends_target_BlackHole
+  CONFIG = Release
   DEP_FILE = CMakeFiles/BlackHole.dir/src/main.mm.o.d
-  FLAGS = -std=gnu++17 -arch arm64
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -arch arm64
   INCLUDES = -I"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src"
   OBJECT_DIR = CMakeFiles/BlackHole.dir
   OBJECT_FILE_DIR = CMakeFiles/BlackHole.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/BlackHole.dir
 
-build CMakeFiles/BlackHole.dir/src/renderer.mm.o: OBJCXX_COMPILER__BlackHole_unscanned_ /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/renderer.mm || cmake_object_order_depends_target_BlackHole
+build CMakeFiles/BlackHole.dir/src/renderer.mm.o: OBJCXX_COMPILER__BlackHole_unscanned_Release /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/renderer.mm || cmake_object_order_depends_target_BlackHole
+  CONFIG = Release
   DEP_FILE = CMakeFiles/BlackHole.dir/src/renderer.mm.o.d
-  FLAGS = -std=gnu++17 -arch arm64
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -arch arm64
   INCLUDES = -I"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src"
   OBJECT_DIR = CMakeFiles/BlackHole.dir
   OBJECT_FILE_DIR = CMakeFiles/BlackHole.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/BlackHole.dir
 
-build CMakeFiles/BlackHole.dir/src/geodesics.cpp.o: CXX_COMPILER__BlackHole_unscanned_ /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/geodesics.cpp || cmake_object_order_depends_target_BlackHole
+build CMakeFiles/BlackHole.dir/src/geodesics.cpp.o: CXX_COMPILER__BlackHole_unscanned_Release /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/src/geodesics.cpp || cmake_object_order_depends_target_BlackHole
+  CONFIG = Release
   DEP_FILE = CMakeFiles/BlackHole.dir/src/geodesics.cpp.o.d
-  FLAGS = -std=gnu++17 -arch arm64
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -arch arm64
   INCLUDES = -I"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src"
   OBJECT_DIR = CMakeFiles/BlackHole.dir
   OBJECT_FILE_DIR = CMakeFiles/BlackHole.dir/src
@@ -82,8 +90,9 @@ build CMakeFiles/BlackHole.dir/src/geodesics.cpp.o: CXX_COMPILER__BlackHole_unsc
 #############################################
 # Link the executable BlackHole
 
-build BlackHole: CXX_EXECUTABLE_LINKER__BlackHole_ CMakeFiles/BlackHole.dir/src/main.mm.o CMakeFiles/BlackHole.dir/src/renderer.mm.o CMakeFiles/BlackHole.dir/src/geodesics.cpp.o || MetalShader
-  FLAGS = -arch arm64
+build BlackHole: CXX_EXECUTABLE_LINKER__BlackHole_Release CMakeFiles/BlackHole.dir/src/main.mm.o CMakeFiles/BlackHole.dir/src/renderer.mm.o CMakeFiles/BlackHole.dir/src/geodesics.cpp.o || MetalShader
+  CONFIG = Release
+  FLAGS = -O3 -DNDEBUG -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
   LINK_LIBRARIES = -framework Metal  -framework MetalKit  -framework Cocoa  -framework QuartzCore
   OBJECT_DIR = CMakeFiles/BlackHole.dir
