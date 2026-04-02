@@ -127,7 +127,7 @@ build CMakeFiles/MetalShader | ${cmake_ninja_workdir}CMakeFiles/MetalShader: pho
 # Custom command for blackhole.metallib
 
 build blackhole.metallib | ${cmake_ninja_workdir}blackhole.metallib: CUSTOM_COMMAND /Users/lucasdelbecque/Desktop/4C$ 55$ 4B/DEV/BlackHole/shaders/blackhole.metal
-  COMMAND = cd "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metal -sdk macosx /Users/lucasdelbecque/Desktop/4C\ 55\ 4B/DEV/BlackHole/shaders/blackhole.metal -o /Users/lucasdelbecque/Desktop/4C\ 55\ 4B/DEV/BlackHole/cmake-build-debug/blackhole.metallib
+  COMMAND = cd "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metal /Users/lucasdelbecque/Desktop/4C\ 55\ 4B/DEV/BlackHole/shaders/blackhole.metal -o /Users/lucasdelbecque/Desktop/4C\ 55\ 4B/DEV/BlackHole/cmake-build-debug/blackhole.metallib
   DESC = Generating blackhole.metallib
   restat = 1
 

@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BlackHole::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BlackHole-Debug-1795c3e1c7c8c9902af9.json",
+					"jsonFile" : "target-BlackHole-Debug-50cd75746614f19f7787.json",
 					"name" : "BlackHole",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "MetalShader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MetalShader-Debug-680e81c09bf924df88e1.json",
+					"jsonFile" : "target-MetalShader-Debug-f83d63cb08710ebaaf96.json",
 					"name" : "MetalShader",
 					"projectIndex" : 0
 				}

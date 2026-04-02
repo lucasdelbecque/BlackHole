@@ -7,7 +7,7 @@ struct BlackHoleParams {
     float mass       = 1.0f;   // M
     float spin       = 0.0f;   // a (0 = Schwarzschild, <M = Kerr)
     float accDiskMin = 2.6f;   // rayon interne disque (ISCO ≈ 6M pour a=0)
-    float accDiskMax = 12.0f;  // rayon externe disque
+    float accDiskMax = 5.0f;  // rayon externe disque
 };
 
 // État d'un rayon : position (r,theta,phi) + vitesses
