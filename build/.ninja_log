@@ -1,10 +1,8 @@
 # ninja log v7
-86	6581	1775097972771739523	blackhole.metallib	3f3a6bd3bff0dcf6
-86	6581	1775097972771739523	/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/build/blackhole.metallib	3f3a6bd3bff0dcf6
+10	151	1775103492824636267	blackhole.metallib	3f3a6bd3bff0dcf6
+10	151	1775103492824636267	/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/build/blackhole.metallib	3f3a6bd3bff0dcf6
 3441	4054	1775096541770303675	CMakeFiles/BlackHole.dir/src/geodesics.cpp.o	72211dc14edf2e45
-42	1112	1775098960886032941	CMakeFiles/BlackHole.dir/src/renderer.mm.o	6e7630fb7b3414cf
-42	1295	1775098960885658106	CMakeFiles/BlackHole.dir/src/main.mm.o	25e9271633116aa3
-1295	1419	1775098962139289609	BlackHole	dc6714aeba68410
+26	1646	1775102864352620874	CMakeFiles/BlackHole.dir/src/renderer.mm.o	6e7630fb7b3414cf
+26	1723	1775102864352214331	CMakeFiles/BlackHole.dir/src/main.mm.o	25e9271633116aa3
+1723	1861	1775102866049478264	BlackHole	dc6714aeba68410
 3	12	1774493212979860774	clean	7eb198a2a14a776
-89	1854	1775099047596277616	CMakeFiles/BlackHole.dir/src/main.mm.o	25e9271633116aa3
-1854	2140	1775099049361335565	BlackHole	dc6714aeba68410
