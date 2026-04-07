@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug",
+  "command": "/usr/bin/c++ -I\"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src\" -x objective-c++ -g -std=gnu++17 -arch arm64 -fcolor-diagnostics -o CMakeFiles/BlackHole.dir/src/main.mm.o -c \"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/main.mm\"",
+  "file": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/main.mm",
+  "output": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug/CMakeFiles/BlackHole.dir/src/main.mm.o"
+},
+{
+  "directory": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug",
+  "command": "/usr/bin/c++ -I\"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src\" -x objective-c++ -g -std=gnu++17 -arch arm64 -fcolor-diagnostics -o CMakeFiles/BlackHole.dir/src/renderer.mm.o -c \"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/renderer.mm\"",
+  "file": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/renderer.mm",
+  "output": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug/CMakeFiles/BlackHole.dir/src/renderer.mm.o"
+},
+{
+  "directory": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug",
+  "command": "/usr/bin/c++ -I\"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src\" -g -std=gnu++17 -arch arm64 -fcolor-diagnostics -o CMakeFiles/BlackHole.dir/src/geodesics.cpp.o -c \"/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/geodesics.cpp\"",
+  "file": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/src/geodesics.cpp",
+  "output": "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug/CMakeFiles/BlackHole.dir/src/geodesics.cpp.o"
+}
+]

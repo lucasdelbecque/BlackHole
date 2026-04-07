@@ -23,6 +23,11 @@
 			}
 		]
 	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
 	"id" : "MetalShader::@6890427a1f51a3e7e1df",
 	"name" : "MetalShader",
 	"paths" : 

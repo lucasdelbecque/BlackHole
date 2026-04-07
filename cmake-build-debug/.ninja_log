@@ -1,7 +1,0 @@
-# ninja log v5
-0	3634	1774982997617206197	blackhole.metallib	e7890174c40e9b43
-0	3634	1774982997617206197	/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug/blackhole.metallib	e7890174c40e9b43
-3635	4157	1774982998130283124	CMakeFiles/BlackHole.dir/src/geodesics.cpp.o	50f90a7968c471fc
-3635	5010	1774982998989396046	CMakeFiles/BlackHole.dir/src/renderer.mm.o	8a6184be678c5e1
-3634	5242	1774982999218850099	CMakeFiles/BlackHole.dir/src/main.mm.o	d1a56aea00942404
-5243	5476	1774982999439306471	BlackHole	36b7cc53d29cacbd

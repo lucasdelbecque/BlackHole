@@ -172,6 +172,7 @@
 # define COMPILER_VERSION_MINOR DEC(__open_xl_release__)
 # define COMPILER_VERSION_PATCH DEC(__open_xl_modification__)
 # define COMPILER_VERSION_TWEAK DEC(__open_xl_ptf_fix_level__)
+# define COMPILER_VERSION_INTERNAL_STR  __clang_version__
 
 
 #elif defined(__ibmxl__) && defined(__clang__)
@@ -211,6 +212,14 @@
 # if defined(__PGIC_PATCHLEVEL__)
 #  define COMPILER_VERSION_PATCH DEC(__PGIC_PATCHLEVEL__)
 # endif
+
+#elif defined(__clang__) && defined(__cray__)
+# define COMPILER_ID "CrayClang"
+# define COMPILER_VERSION_MAJOR DEC(__cray_major__)
+# define COMPILER_VERSION_MINOR DEC(__cray_minor__)
+# define COMPILER_VERSION_PATCH DEC(__cray_patchlevel__)
+# define COMPILER_VERSION_INTERNAL_STR __clang_version__
+
 
 #elif defined(_CRAYC)
 # define COMPILER_ID "Cray"
@@ -263,6 +272,19 @@
   # define COMPILER_VERSION_MINOR DEC(__VERSION__ % 100)
 # define COMPILER_VERSION_INTERNAL DEC(__VERSION__)
 
+#elif defined(__ORANGEC__)
+# define COMPILER_ID "OrangeC"
+# define COMPILER_VERSION_MAJOR DEC(__ORANGEC_MAJOR__)
+# define COMPILER_VERSION_MINOR DEC(__ORANGEC_MINOR__)
+# define COMPILER_VERSION_PATCH DEC(__ORANGEC_PATCHLEVEL__)
+
+#elif defined(__RENESAS__)
+# define COMPILER_ID "Renesas"
+/* __RENESAS_VERSION__ = 0xVVRRPP00 */
+# define COMPILER_VERSION_MAJOR HEX(__RENESAS_VERSION__ >> 24 & 0xFF)
+# define COMPILER_VERSION_MINOR HEX(__RENESAS_VERSION__ >> 16 & 0xFF)
+# define COMPILER_VERSION_PATCH HEX(__RENESAS_VERSION__ >> 8  & 0xFF)
+
 #elif defined(__SCO_VERSION__)
 # define COMPILER_ID "SCO"
 
@@ -302,6 +324,13 @@
   # define COMPILER_VERSION_MINOR DEC(__ARMCOMPILER_VERSION/10000 % 100)
   # define COMPILER_VERSION_PATCH DEC(__ARMCOMPILER_VERSION/100   % 100)
 # define COMPILER_VERSION_INTERNAL DEC(__ARMCOMPILER_VERSION)
+
+#elif defined(__clang__) && defined(__ti__)
+# define COMPILER_ID "TIClang"
+  # define COMPILER_VERSION_MAJOR DEC(__ti_major__)
+  # define COMPILER_VERSION_MINOR DEC(__ti_minor__)
+  # define COMPILER_VERSION_PATCH DEC(__ti_patchlevel__)
+# define COMPILER_VERSION_INTERNAL DEC(__ti_version__)
 
 #elif defined(__clang__)
 # define COMPILER_ID "Clang"
@@ -384,6 +413,14 @@
 #  define COMPILER_VERSION_PATCH DEC(__SUBVERSION__)
 #  define COMPILER_VERSION_INTERNAL DEC(__IAR_SYSTEMS_ICC__)
 # endif
+
+#elif defined(__DCC__) && defined(_DIAB_TOOL)
+# define COMPILER_ID "Diab"
+  # define COMPILER_VERSION_MAJOR DEC(__VERSION_MAJOR_NUMBER__)
+  # define COMPILER_VERSION_MINOR DEC(__VERSION_MINOR_NUMBER__)
+  # define COMPILER_VERSION_PATCH DEC(__VERSION_ARCH_FEATURE_NUMBER__)
+  # define COMPILER_VERSION_TWEAK DEC(__VERSION_BUG_FIX_NUMBER__)
+
 
 
 /* These compilers are either not known or too old to define an
@@ -630,6 +667,14 @@ char const* qnxnto = "INFO" ":" "qnxnto[]";
 #  define ARCHITECTURE_ID ""
 # endif
 
+#elif defined(__clang__) && defined(__ti__)
+# if defined(__ARM_ARCH)
+#  define ARCHITECTURE_ID "ARM"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
 #elif defined(__TI_COMPILER_VERSION__)
 # if defined(__TI_ARM__)
 #  define ARCHITECTURE_ID "ARM"
@@ -661,7 +706,7 @@ char const* qnxnto = "INFO" ":" "qnxnto[]";
 # elif defined(__CMCS__)
 #  define ARCHITECTURE_ID "MCS"
 
-# elif defined(__CARM__)
+# elif defined(__CARM__) || defined(__CPARM__)
 #  define ARCHITECTURE_ID "ARM"
 
 # elif defined(__CARC__)
@@ -672,6 +717,20 @@ char const* qnxnto = "INFO" ":" "qnxnto[]";
 
 # elif defined(__CPCP__)
 #  define ARCHITECTURE_ID "PCP"
+
+# else
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__RENESAS__)
+# if defined(__CCRX__)
+#  define ARCHITECTURE_ID "RX"
+
+# elif defined(__CCRL__)
+#  define ARCHITECTURE_ID "RL78"
+
+# elif defined(__CCRH__)
+#  define ARCHITECTURE_ID "RH850"
 
 # else
 #  define ARCHITECTURE_ID ""
@@ -763,22 +822,27 @@ char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
 
 
 
-#if defined(_MSC_VER) && defined(_MSVC_LANG)
-#define CXX_STD _MSVC_LANG
-#else
+#define CXX_STD_98 199711L
+#define CXX_STD_11 201103L
+#define CXX_STD_14 201402L
+#define CXX_STD_17 201703L
+#define CXX_STD_20 202002L
+#define CXX_STD_23 202302L
+
 #define CXX_STD __cplusplus
-#endif
 
 const char* info_language_standard_default = "INFO" ":" "standard_default["
-#if CXX_STD > 202002L
+#if CXX_STD > CXX_STD_23
+  "26"
+#elif CXX_STD > CXX_STD_20
   "23"
-#elfif CXX_STD > 201703L
+#elif CXX_STD > CXX_STD_17
   "20"
-#elif CXX_STD >= 201703L
+#elif CXX_STD > CXX_STD_14
   "17"
-#elif CXX_STD >= 201402L
+#elif CXX_STD > CXX_STD_11
   "14"
-#elif CXX_STD >= 201103L
+#elif CXX_STD >= CXX_STD_11
   "11"
 #else
   "98"
@@ -803,7 +867,7 @@ int main(int argc, char* argv[])
 #ifdef COMPILER_VERSION_MAJOR
   require += info_version[argc];
 #endif
-#ifdef COMPILER_VERSION_INTERNAL
+#if defined(COMPILER_VERSION_INTERNAL) || defined(COMPILER_VERSION_INTERNAL_STR)
   require += info_version_internal[argc];
 #endif
 #ifdef SIMULATE_ID

@@ -50,13 +50,18 @@
 			}
 		]
 	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
 	"compileGroups" : 
 	[
 		{
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -mmacosx-version-min=26.3 -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu++17 -arch arm64 -fcolor-diagnostics"
 				}
 			],
 			"includes" : 
@@ -85,7 +90,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk -mmacosx-version-min=26.3 -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu++17 -arch arm64 -fcolor-diagnostics"
 				}
 			],
 			"includes" : 
@@ -127,7 +132,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "",
+				"fragment" : "-Wl,-search_paths_first -Wl,-headerpad_max_install_names",
 				"role" : "flags"
 			},
 			{
@@ -153,8 +158,34 @@
 		],
 		"language" : "CXX"
 	},
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"fragment" : "-framework Metal"
+		},
+		{
+			"backtrace" : 2,
+			"fragment" : "-framework MetalKit"
+		},
+		{
+			"backtrace" : 2,
+			"fragment" : "-framework Cocoa"
+		},
+		{
+			"backtrace" : 2,
+			"fragment" : "-framework QuartzCore"
+		}
+	],
 	"name" : "BlackHole",
 	"nameOnDisk" : "BlackHole",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "MetalShader::@6890427a1f51a3e7e1df"
+		}
+	],
 	"paths" : 
 	{
 		"build" : ".",

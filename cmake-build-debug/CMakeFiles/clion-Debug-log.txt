@@ -1,4 +1,14 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole" -B "/Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug"
--- Configuring done (0.0s)
+-- The CXX compiler identification is AppleClang 21.0.0.21000099
+-- The OBJCXX compiler identification is AppleClang 21.0.0.21000099
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting OBJCXX compiler ABI info
+-- Detecting OBJCXX compiler ABI info - done
+-- Check for working OBJCXX compiler: /usr/bin/c++ - skipped
+-- Configuring done (3.4s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/lucasdelbecque/Desktop/4C 55 4B/DEV/BlackHole/cmake-build-debug
